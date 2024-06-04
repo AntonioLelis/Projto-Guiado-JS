@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Helvetica, sans-serif;
 }
 
-body{
+body {
     background-color: #333745;
 }
 
@@ -17,7 +17,7 @@ header {
     font-size: 1.4rem;
 }
 
-header > p {
+header>p {
     font-size: 1rem;
     color: #a5afd7;
 }
@@ -26,7 +26,7 @@ main {
     margin: 2rem 20vw;
 }
 
-main > button {
+main>button {
     padding: 1rem 2rem;
     width: 100%;
     background-color: #8357C5;
@@ -39,16 +39,16 @@ main > button {
     border-bottom: 0.4rem solid #693cad;
 }
 
-main > button:disabled{
+main>button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
 
-main > div {
+main>div {
     margin: 2rem 0;
 }
 
-main > div > div:nth-child(1) {
+main>div>div:nth-child(1) {
     background-color: #3C4251;
     display: flex;
     color: #a5afd7;
@@ -56,16 +56,17 @@ main > div > div:nth-child(1) {
     justify-content: space-between;
 }
 
-main > div > div:nth-child(1) > a{
+main>div>div:nth-child(1)>a {
     text-decoration: none;
     color: #a5afd7;
     cursor: pointer;
 }
-main > div > div:nth-child(1) > a:hover{
+
+main>div>div:nth-child(1)>a:hover {
     color: white;
 }
 
-main > div > div:nth-child(2) {
+main>div>div:nth-child(2) {
     background-color: #464B5E;
     color: #a5afd7;
     text-align: center;
@@ -73,23 +74,23 @@ main > div > div:nth-child(2) {
     border-bottom: 1px solid #5C627B;
 }
 
-main > div > form {
+main>div>form {
     background-color: #464B5E;
     padding: 1rem 1.6rem;
     display: flex;
     gap: 5%;
 }
 
-main > div > form > input {
-     background-color: #333745;
-     border: none;
-     width: 75%;
-     color: #a5afd7;
-     padding: 1rem;
-     border-bottom: 0.2rem solid #1D2028;
+main>div>form>input {
+    background-color: #333745;
+    border: none;
+    width: 75%;
+    color: #a5afd7;
+    padding: 1rem;
+    border-bottom: 0.2rem solid #1D2028;
 }
 
-main > div > form > button {
+main>div>form>button {
     width: 20%;
     border-radius: 1rem;
     background-color: #8357C5;
@@ -100,7 +101,8 @@ main > div > form > button {
     cursor: pointer;
     opacity: 0.8;
 }
-main > div > form > button:hover{
+
+main>div>form>button:hover {
     opacity: 1;
 }
 
@@ -116,15 +118,30 @@ main > div > form > button:hover{
     display: none;
 }
 
-.closebtn{
+.closebtn {
     position: absolute;
     top: 1rem;
     right: 1rem;
     cursor: pointer;
     transition: 0.5s;
 }
-.closebtn:hover{
+
+.closebtn:hover {
     color: gray;
 }
 
-/* https://ufes.es/aula1505 */
+.removeButton {
+    float: right;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: #464B5E;
+    color: #a5afd7;
+}
+
+.task-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
