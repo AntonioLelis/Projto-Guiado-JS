@@ -145,3 +145,11 @@ main>div>form>button:hover {
     justify-content: center;
 }
 
+.completeButton {
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #464B5E;
+    color: #a5afd7;
+
+}
