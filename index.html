@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt_br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +9,21 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
+
 <body onload="loadtasks()">
     <header>
         <h1>Seu Gestor de Tarefas Automático</h1>
         <p>Não sabe o que fazer? Deixe seu computador decidir por vc....</p>
     </header>
     <main>
-        <button disabled>O que eu devo fazer?</button>
+        <button id="botaoEscolherTarefa" onclick="escolherTarefaAleatoria()">O que eu devo fazer?</button>
 
         <div>
             <div>
                 <p><strong>Suas Opções</strong></p>
                 <a onclick="removeAll()">Remover todos</a>
             </div>
-            <div id="task">
+            <div id="task" class="task-list">
                 <p>Insira a primeira tarefa para começar...</p>
             </div>
             <form onsubmit="addTask(event)">
@@ -39,4 +41,5 @@
         </div>
     </main>
 </body>
-</html></html>
+
+</html>
