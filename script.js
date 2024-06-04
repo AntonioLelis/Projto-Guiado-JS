@@ -2,7 +2,7 @@ let taskList;
 
 function loadtasks() {
     let list = localStorage.getItem('taskList');
-    
+
     taskList = list ? JSON.parse(list) : [];
 
     updateTask();
@@ -43,24 +43,58 @@ function showMessage() {
 
 function updateTask() {
     let divTasks = document.getElementById('task');
+    divTasks.innerHTML = '';
+
     if (taskList.length > 0) {
         let newOl = document.createElement('ol');
 
-        taskList.forEach((task) => {
+        taskList.forEach((task, index) => {
             let newLi = document.createElement('li');
             newLi.innerText = task;
+
+            let removeButton = document.createElement('button');
+            removeButton.innerText = 'X';
+            removeButton.className = 'removeButton';
+            removeButton.onclick = function () {
+                removeTask(index);
+            };
+
+            newLi.appendChild(removeButton);
             newOl.appendChild(newLi);
         });
-        divTasks.replaceChildren(newOl);
+
+        divTasks.appendChild(newOl);
     } else {
         let p = document.createElement('p');
         p.innerText = 'Insira a primeira tarefa para começar...';
-        divTasks.replaceChildren(p);
+        divTasks.appendChild(p);
     }
+
+    let botaoEscolherTarefa = document.getElementById('botaoEscolherTarefa');
+    botaoEscolherTarefa.disabled = taskList.length === 0;
+}
+
+function removeTask(index) {
+    taskList.splice(index, 1);
+    localStorage.setItem('taskList', JSON.stringify(taskList));
+    updateTask();
 }
 
 function removeAll() {
     taskList = [];
     localStorage.setItem('taskList', JSON.stringify(taskList));
     updateTask();
+}
+
+function escolherTarefaAleatoria() {
+    if (taskList.length > 0) {
+        let indiceAleatorio = Math.floor(Math.random() * taskList.length);
+        let tarefaEscolhida = taskList[indiceAleatorio];
+        alert('Tarefa escolhida: ' + tarefaEscolhida);
+        taskList.splice(indiceAleatorio, 1);
+        localStorage.setItem('taskList', JSON.stringify(taskList));
+        updateTask();
+    } else {
+        alert('Não há tarefas para escolher.');
+    }
 }
